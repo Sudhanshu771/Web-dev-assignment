@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <nav class="bg-orange-400 flex justify-between">
+        <div>
+            <img class="m-4 w-24" src="/logo.png" alt="logo">
+        </div>
+        <div>
+            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
+                <a href="/home.html"><li class="hover:text-white cursor-pointer">Home</li></a>
+                <a href="about.html"><li class="hover:text-white cursor-pointer">About</li></a>
+                <li class="hover:text-white cursor-pointer">Services</li>
+                <a href="contact.html"><li class="hover:text-white cursor-pointer">Contact</li></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="m-4 bg-blue-300 rounded-md">
+        <h1 class="text-4xl text-center p-4 font-semibold text-blue-950">Our Services</h1>
+        <!-- Slider main container -->
+        <div class="swiper w-3/5 h-1/5">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide flex flex-col items-center">
+                    <div class="font-semibold text-2xl">Take Out</div>
+                    <div><img src="path/to/image1.jpg" alt="Slide 1"></div>
+                </div>
+                <div class="swiper-slide flex flex-col items-center">
+                    <div class="font-semibold text-2xl">Home Delivery</div>
+                    <div><img src="path/to/image2.jpg" alt="Slide 2"></div>
+                </div>
+                <div class="swiper-slide flex flex-col items-center">
+                    <div class="font-semibold text-2xl">Dine In</div>
+                    <div><img src="path/to/image3.jpg" alt="Slide 3"></div>
+                </div>
+            </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+  
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+  </div>
+    </div>
+    <footer class="bg-slate-200 p-4">
+        <div class="flex justify-between">
+            <div>
+                <img class="h-20" src="/footerLogo.png" alt="Alternative logo of the restaurant">
+            </div>
+            <div>
+                <h2 class="font-bold">ALL COPYRIGHTS RESERVED &#169;<br> 2023 BY LITTLE LEMON</h2>
+                <div class="flex m-2 justify-between">
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Facebook_glyph_svg-256.png" alt="Connect on Facebook"></div>
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn3.iconfinder.com/data/icons/social-media-2253/17/Vector-1-256.png" alt="Connect on Instagram"></div>
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Twitter_svg-256.png" alt="Connect on Twitter"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+        },
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
+</body>
+</html>
