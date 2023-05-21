@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j"></script>
+    <script>
+        function onSubmit(event) {
+          event.preventDefault(); // Prevent form submission until reCAPTCHA token is obtained
+    
+          grecaptcha.execute('6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j', { action: 'contact' }).then(function (token) {
+            // Add the reCAPTCHA token to the form data
+            document.getElementById("g-recaptcha-response").value = token;
+    
+            // Submit the form
+            document.getElementById("contact-form").submit();
+          });
+        }
+      </script>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-orange-400 flex justify-between">
+        <div>
+            <img class="m-4 w-24" src="logo.png" alt="logo">
+        </div>
+        <div>
+            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
+                <a href="home.html"><li class="hover:text-white cursor-pointer">Home</li></a>
+                <a href="about.html"><li class="hover:text-white cursor-pointer">About</li></a>
+                <a href="services.html"><li class="hover:text-white cursor-pointer">Services</li></a>
+                <li class="hover:text-white cursor-pointer">Contact</li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <form class="bg-green-200 m-4 border shadow-md" id="contact-form" action="process-contact-form.php" method="POST" onsubmit="onSubmit(event)">
+            <h1 class="text-center text-3xl font-bold m-4">Contact Us</h1>
+            <div>
+                <div class="m-4 flex flex-col">
+                    <label for="name">Name <span>*</span></label>
+                    <input class="border-2 border-gray-300 p-2" type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="m-4 flex flex-col">
+                    <label for="email">Email <span>*</span></label>
+                    <input class="border-2 border-gray-300 p-2" type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="m-4 flex flex-col">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea class="border-2 border-gray-300 p-2" name="message" id="message" cols="30" rows="6" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="m-4">
+                    <!-- Add the reCAPTCHA response field -->
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                </div>
+                <div class="m-4">
+                    <!-- <input type="submit" class="bg-orange-400 hover:bg-orange-500 p-2 px-4 rounded-lg" value="Submit"> -->
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer class="bg-slate-200 p-4">
+        <div class="flex justify-between">
+            <div>
+                <img class="h-20" src="footerLogo.png" alt="Alternative logo of the restaurant">
+            </div>
+            <div>
+                <h2 class="font-bold">ALL COPYRIGHTS RESERVED &#169;<br> 2023 BY LITTLE LEMON</h2>
+                <div class="flex m-2 justify-between">
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Facebook_glyph_svg-256.png" alt="Connect on Facebook"></div>
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn3.iconfinder.com/data/icons/social-media-2253/17/Vector-1-256.png" alt="Connect on Instagram"></div>
+                    <div class="cursor-pointer"><img class="h-6" src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Twitter_svg-256.png" alt="Connect on Twitter"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- SITE-KEY: 6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j  -->
+<!-- SERVER-KEY: 6LcrJygmAAAAABetGE9JpuIlVKmDWAzTwsGhOyzE -->
