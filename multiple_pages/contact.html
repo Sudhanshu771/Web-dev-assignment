@@ -25,21 +25,28 @@
             color: red;
         }
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav class="bg-orange-400 flex justify-between">
-        <div>
-            <img class="m-4 w-24" src="/logo.png" alt="logo">
-        </div>
-        <div>
-            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
-                <a href="/home.html"><li class="hover:text-white cursor-pointer">Home</li></a>
-                <a href="about.html"><li class="hover:text-white cursor-pointer">About</li></a>
-                <a href="services.html"><li class="hover:text-white cursor-pointer">Services</li></a>
-                <li class="hover:text-white cursor-pointer">Contact</li>
-            </ul>
+    <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
+          </div>
+          <div class="toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
     </nav>
+    <script src="/script.js"></script>
     <main>
         <form class="bg-green-200 m-4 border shadow-md" id="contact-form" action="process-contact-form.php" method="POST" onsubmit="onSubmit(event)">
             <h1 class="text-center text-3xl font-bold m-4">Contact Us</h1>

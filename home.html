@@ -6,21 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="bg-orange-400 flex justify-between">
-        <div>
-            <img class="m-4 w-24" src="logo.png" alt="logo">
-        </div>
-        <div>
-            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
-                <li class="hover:text-white cursor-pointer">Home</li>
-                <a href="multiple_pages/about.html"><li class="hover:text-white cursor-pointer">About</li></a>
-                <a href="multiple_pages/services.html"><li class="hover:text-white cursor-pointer">Services</li></a>
-                <a href="multiple_pages/contact.html"><li class="hover:text-white cursor-pointer">Contact</li></a>
-            </ul>
+    <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#"><img class="m-4 w-28" src="logo.png" alt="logo"></a>
+          </div>
+          <div class="toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="multiple_pages/about.html">About</a></li>
+            <li><a href="multiple_pages/services.html">Services</a></li>
+            <li><a href="multiple_pages/contact.html">Contact</a></li>
+          </ul>
         </div>
     </nav>
+      
+    <script src="script.js"></script>
     <main>
         <div class="flex bg-slate-300 m-4 rounded-md">
             <div class="py-48 px-4">

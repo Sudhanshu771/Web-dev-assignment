@@ -7,21 +7,28 @@
     <title>Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav class="bg-orange-400 flex justify-between">
-        <div>
-            <img class="m-4 w-24" src="/logo.png" alt="logo">
-        </div>
-        <div>
-            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
-                <a href="/home.html"><li class="hover:text-white cursor-pointer">Home</li></a>
-                <a href="about.html"><li class="hover:text-white cursor-pointer">About</li></a>
-                <li class="hover:text-white cursor-pointer">Services</li>
-                <a href="contact.html"><li class="hover:text-white cursor-pointer">Contact</li></a>
-            </ul>
+    <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
+          </div>
+          <div class="toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
     </nav>
+    <script src="/script.js"></script>
     <div class="m-4 bg-blue-300 rounded-md">
         <h1 class="text-4xl text-center p-4 font-semibold text-blue-950">Our Services</h1>
         <!-- Slider main container -->

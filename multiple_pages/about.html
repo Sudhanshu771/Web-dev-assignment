@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav class="bg-orange-400 flex justify-between">
-        <div>
-            <img class="m-4 w-24" src="/logo.png" alt="logo">
+    <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
+          </div>
+          <div class="toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div>
-            <ul class="flex mx-4 py-4 font-bold space-x-16 justify-end">
-                <a href="/home.html"><li class="hover:text-white cursor-pointer">Home</li></a>
-                <li class="hover:text-white cursor-pointer">About</li>
-                <a href="services.html"><li class="hover:text-white cursor-pointer">Services</li></a>
-                <a href="contact.html"><li class="hover:text-white cursor-pointer">Contact</li></a>
-            </ul>
-        </div>
-        <!-- <div>
-            <button class="rounded-full bg-red-500 p-2 m-2 hover:text-red-500 hover:bg-white">Book a Table</button>
-        </div> -->
     </nav>
+    <script src="/script.js"></script>
     <main class="bg-orange-200 m-4 rounded-md">
         <h1 class="text-3xl text-center pt-2 font-semibold">About Us</h1>
         <div class="flex justify-around flex-wrap">
