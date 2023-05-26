@@ -6,50 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j"></script>
-    <script>
-        function onSubmit(event) {
-          event.preventDefault(); // Prevent form submission until reCAPTCHA token is obtained
-    
-          grecaptcha.execute('6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j', { action: 'contact' }).then(function (token) {
-            // Add the reCAPTCHA token to the form data
-            document.getElementById("g-recaptcha-response").value = token;
-    
-            // Submit the form
-            document.getElementById("contact-form").submit();
-          });
-        }
-      </script>
     <style>
-        span{
+        span {
             color: red;
         }
     </style>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        main {
+            padding: 40px 0;
+            background-color: #f8f8f8;
+            min-height: calc(100vh - 170px);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .contact-form h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #ffa500;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #ff8c00;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-          <div class="logo">
-            <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
-          </div>
-          <div class="toggle-button">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="menu">
-            <li><a href="/home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+            <div class="logo">
+                <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
+            </div>
+            <div class="toggle-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li><a href="/home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
     </nav>
     <script src="/script.js"></script>
     <main>
-        <form class="bg-green-200 m-4 border shadow-md" id="contact-form" action="process-contact-form.php" method="POST" onsubmit="onSubmit(event)">
-            <h1 class="text-center text-3xl font-bold m-4">Contact Us</h1>
+        <form id="contact-form" class="contact-form">
+            <h1>Contact Us</h1>
             <div>
                 <div class="m-4 flex flex-col">
                     <label for="name">Name <span>*</span></label>
@@ -63,32 +97,26 @@
                     <label for="message">Message <span>*</span></label>
                     <textarea class="border-2 border-gray-300 p-2" name="message" id="message" cols="30" rows="6" placeholder="Enter your message" required></textarea>
                 </div>
-                <div class="m-4">
-                    <!-- Add the reCAPTCHA response field -->
-                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-                </div>
-                <div class="m-4">
-                    <input type="submit" class="bg-orange-400 hover:bg-orange-500 p-2 px-4 rounded-lg" value="Submit">
+                <div class="p-4">
+                    <input type="submit" class="bg-orange-400 hover:bg-orange-500 py-2 px-4 rounded" value="Submit">
                 </div>
             </div>
         </form>
     </main>
     <footer class="site-footer">
         <div class="footer-left">
-          <img src="/footerLogo.png" alt="Logo">
+            <img src="/footerLogo.png" alt="Logo">
         </div>
         <div class="footer-right">
-          <div class="social-media">
-            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-256.png" alt="Facebook"></a>
-            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter"></a>
-            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media-256.png" alt="Instagram"></a>
-          </div>
-          <div class="copyright">
-            &copy; 2023 Little Lemon. All rights reserved.
-          </div>
+            <div class="social-media">
+                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-256.png" alt="Facebook"></a>
+                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter"></a>
+                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media-256.png" alt="Instagram"></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Little Lemon. All rights reserved.
+            </div>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>
-<!-- SITE-KEY: 6LcrJygmAAAAAEbws1AaRoOV1NB9b1xYQmdZuL0j  -->
-<!-- SERVER-KEY: 6LcrJygmAAAAABetGE9JpuIlVKmDWAzTwsGhOyzE -->
