@@ -4,139 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
+    <title>About</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        span {
-            color: red;
-        }
-    </style>
     <link rel="stylesheet" href="/styles.css">
-    <style>
-        main {
-            padding: 40px 0;
-            background-color: #f8f8f8;
-            min-height: calc(100vh - 170px);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        .contact-form h1 {
-            margin: 0;
-            font-size: 30px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .contact-form input[type="submit"] {
-            background-color: #ffa500;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form input[type="submit"]:hover {
-            background-color: #ff8c00;
-        }
-
-        .contact-form .error-message {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
-        <!-- Your existing code for the navbar -->
+        <div class="container">
+          <div class="logo">
+            <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
+          </div>
+          <div class="toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
     </nav>
-
-    <main>
-        <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
-            <h1>Contact Us</h1>
-            <div>
-                <div class="m-4 flex flex-col">
-                    <label for="name">Name <span>*</span></label>
-                    <input class="border-2 border-gray-300 p-2" type="text" name="name" id="name" placeholder="Enter your name" required>
+    <script src="/script.js"></script>
+    <main class="bg-orange-200">
+        <div class="container2">
+            <h1 class="text-center mb-5 text-3xl font-bold">About Us</h1>
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="https://img.freepik.com/free-photo/happy-waiter-serving-food-group-cheerful-friends-pub_637285-12525.jpg" alt="About restaurant">
                 </div>
-                <div class="m-4 flex flex-col">
-                    <label for="email">Email <span>*</span></label>
-                    <input class="border-2 border-gray-300 p-2" type="email" name="email" id="email" placeholder="Enter your email" required>
+                <div class="about-content">
+                    <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day. Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant. To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.</p>
+                    <div class="py-2">
+                        <a href="#"><button type="button" class="rounded bg-orange-400 p-2 text-white hover:bg-orange-800">Learn More</button></a>
+                    </div>
                 </div>
-                <div class="m-4 flex flex-col">
-                    <label for="message">Message <span>*</span></label>
-                    <textarea class="border-2 border-gray-300 p-2" name="message" id="message" cols="30" rows="6" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="p-4">
-                    <input type="submit" class="bg-orange-400 hover:bg-orange-500 py-2 px-4 rounded" value="Submit">
-                </div>
-                <div class="error-message" id="error-message"></div>
             </div>
-        </form>
+        </div>
     </main>
-
     <footer class="site-footer">
-        <!-- Your existing code for the footer -->
-    </footer>
-
-    <script>
-        function submitForm(event) {
-            event.preventDefault();
-
-            // Reset error message
-            document.getElementById("error-message").textContent = "";
-
-            // Get form values
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-
-            // Validate form fields
-            if (name.trim() === "") {
-                displayErrorMessage("Please enter your name.");
-                return;
-            }
-
-            if (email.trim() === "") {
-                displayErrorMessage("Please enter your email address.");
-                return;
-            }
-
-            if (message.trim() === "") {
-                displayErrorMessage("Please enter your message.");
-                return;
-            }
-
-            // Submit the form
-            document.getElementById("contact-form").submit();
-        }
-
-        function displayErrorMessage(message) {
-            var errorMessage = document.getElementById("error-message");
-            errorMessage.textContent = message;
-        }
-    </script>
+        <div class="footer-left">
+          <img src="/footerLogo.png" alt="Logo">
+        </div>
+        <div class="footer-right">
+          <div class="social-media">
+            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-256.png" alt="Facebook"></a>
+            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter"></a>
+            <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media-256.png" alt="Instagram"></a>
+          </div>
+          <div class="copyright">
+            &copy; 2023 Little Lemon. All rights reserved.
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
 

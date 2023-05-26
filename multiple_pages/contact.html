@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css">
     <style>
         span {
             color: red;
@@ -59,30 +60,36 @@
         .contact-form input[type="submit"]:hover {
             background-color: #ff8c00;
         }
+
+        .contact-form .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
-            </div>
-            <div class="toggle-button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="menu">
-                <li><a href="/home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img class="m-4 w-28" src="/logo.png" alt="logo"></a>
         </div>
+        <div class="toggle-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu">
+          <li><a href="/home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    <script src="/script.js"></script>
+
     <main>
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
             <h1>Contact Us</h1>
             <div>
                 <div class="m-4 flex flex-col">
@@ -100,23 +107,64 @@
                 <div class="p-4">
                     <input type="submit" class="bg-orange-400 hover:bg-orange-500 py-2 px-4 rounded" value="Submit">
                 </div>
+                <div class="error-message" id="error-message"></div>
             </div>
         </form>
     </main>
+
     <footer class="site-footer">
-        <div class="footer-left">
-            <img src="/footerLogo.png" alt="Logo">
+      <div class="footer-left">
+        <img src="/footerLogo.png" alt="Logo">
+      </div>
+      <div class="footer-right">
+        <div class="social-media">
+          <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-256.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter"></a>
+          <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media-256.png" alt="Instagram"></a>
         </div>
-        <div class="footer-right">
-            <div class="social-media">
-                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-256.png" alt="Facebook"></a>
-                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-256.png" alt="Twitter"></a>
-                <a href="#"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media-256.png" alt="Instagram"></a>
-            </div>
-            <div class="copyright">
-                &copy; 2023 Little Lemon. All rights reserved.
-            </div>
+        <div class="copyright">
+          &copy; 2023 Little Lemon. All rights reserved.
         </div>
+      </div>
     </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Reset error message
+            document.getElementById("error-message").textContent = "";
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Validate form fields
+            if (name.trim() === "") {
+                displayErrorMessage("Please enter your name.");
+                return;
+            }
+
+            if (email.trim() === "") {
+                displayErrorMessage("Please enter your email address.");
+                return;
+            }
+
+            if (message.trim() === "") {
+                displayErrorMessage("Please enter your message.");
+                return;
+            }
+
+            // Submit the form
+            document.getElementById("contact-form").submit();
+        }
+
+        function displayErrorMessage(message) {
+            var errorMessage = document.getElementById("error-message");
+            errorMessage.textContent = message;
+        }
+    </script>
+    <script src="/script.js"></script>
 </body>
 </html>
