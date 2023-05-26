@@ -94,3 +94,138 @@ body {
     }
   }
   
+  .banner {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .banner img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .banner .content {
+    flex-grow: 1;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .banner h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .banner p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .banner .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 600px) {
+    .banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .banner img {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .banner .content {
+      text-align: left;
+    }
+  }
+
+  /* Styles for the articles section */
+.articles-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.article {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+}
+
+.article h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.article p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left img {
+  height: 8rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-right .copyright {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left {
+    margin-bottom: 20px;
+  }
+
+  .footer-left img {
+    height: 6rem;
+  }
+}
